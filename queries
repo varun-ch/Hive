@@ -1,0 +1,7 @@
+Queries on the hive tables
+
+select * from sizes order by size desc limit 3;
+
+select uname, SUM(size) from sizes join htables on (sizes.tname==htables.tname) group by uname;
+
+select uname, cdate, count(sizes.tname), SUM(size) from sizes join htables on (sizes.tname==htables.tname) group by uname, cdate ;
